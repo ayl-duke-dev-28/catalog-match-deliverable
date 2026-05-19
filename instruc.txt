@@ -1,0 +1,45 @@
+Take-Home Challenge: Catalog Match
+Overview
+Build a small web app that helps a user find the right product from a catalog by describing what they want. We’ll provide the catalog data; you build everything else from scratch.
+You can use any language, framework, and libraries you like. Hosting is optional but you must be able to demonstrate your application on a live call.
+AI coding agent use is highly encouraged.
+Base Challenge
+Problem. Customers describe what they want in their own words, and the catalog itself is also just descriptions, not structured fields. Matching one piece of free-form text to another is harder than it looks: the same product can be described many different ways, detail levels vary, and the customer’s wording rarely lines up exactly with how the catalog is written. The goal is a tool that takes a natural-language description and surfaces the catalog entries most likely to be what the customer actually means.
+Build a single-page site with:
+A text input where the user types a free-form description of what they’re looking for.
+On submit, the app returns the top 3 matches from the catalog.
+Each match shows the product info plus a confidence score (your call on how it’s calculated and presented, just be ready to explain the choice).
+
+What we provide: the product catalog (format and fields described in the data file).
+There’s no right answer here. Some things worth thinking about:
+What happens when the user types an abbreviation or industry shorthand?
+What happens when the description doesn’t fully specify all the relevant attributes?
+What happens when the description is vague, ambiguous, or could match many products?
+What happens when the description references attributes that aren’t in the catalog?
+How should the confidence score behave across these cases?
+What we’re looking for:
+A reasonable, defensible matching approach.
+Clean separation between the UI, the matching logic, and the data layer.
+Clear consideration of edge cases, even if just in your explanation.
+Stretch Challenge (optional)
+Problem. The same description from two different customers can mean two different things. What a customer has bought before carries a signal about what they’re likely asking for now, and a good match should take that into account. The goal is to use order history to disambiguate the description and rank results closer to what this specific customer is likely to want.
+Add a second input on the same page:
+A searchable dropdown of customer numbers. The user can type to filter, then select one.
+When a customer is selected, your matcher should use that customer’s order history to improve relevance.
+The top-3 results and confidence scores should reflect this personalization.
+
+What we provide: customer order history (format described in the data file).
+What we’re looking for:
+A clear, defensible way of folding order history into the ranking.
+Some thought about edge cases: new customers, sparse history, conflicting signals between description and history.
+Again, there is no correct answer. We mainly want to understand that you have considered multiple options, and can back up your decision making. 
+Deliverables
+A working app (local is fine).
+A link to a GitHub repo with your source code.
+Be ready for a discussion about the choices you made in the code around the above and why.
+Time
+We’d rather see a clean base challenge than a half-finished stretch. Only attempt the stretch if you have time after the base is solid.
+Questions
+If anything is ambiguous, make a reasonable assumption and keep going. If you need to reach out, email kasyap@runparagon.com.
+
+

@@ -1,0 +1,2 @@
+"""Catalog matching application package."""
+

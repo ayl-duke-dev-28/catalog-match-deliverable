@@ -1,0 +1,13 @@
+services:
+  docrag:
+    build: ./docrag_app
+    ports:
+      - "8000:8000"
+    environment:
+      OPENAI_API_KEY: ${OPENAI_API_KEY:-}
+      DOCRAG_EMBEDDING_MODEL: ${DOCRAG_EMBEDDING_MODEL:-text-embedding-3-small}
+      DOCRAG_CHAT_MODEL: ${DOCRAG_CHAT_MODEL:-gpt-4o-mini}
+      DOCRAG_DATA_DIR: /app/data
+    volumes:
+      - ./docrag_app/data:/app/data
+    restart: unless-stopped

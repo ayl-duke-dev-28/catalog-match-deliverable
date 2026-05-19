@@ -1,0 +1,64 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Catalog Match</title>
+    <link rel="stylesheet" href="/static/styles.css" />
+  </head>
+  <body>
+    <main class="shell">
+      <section class="search-pane">
+        <div class="brand">
+          <p class="eyebrow">Paragon take-home</p>
+          <h1>Catalog Match</h1>
+          <p class="intro">Find the closest catalog items from a natural-language product description.</p>
+        </div>
+
+        <form id="match-form" class="match-form">
+          <label for="query">Product description</label>
+          <textarea
+            id="query"
+            rows="5"
+            placeholder='Try "M8 x 50mm BHCS" or "the same washers as last time"'
+            autocomplete="off"
+          ></textarea>
+
+          <label for="customer-search">Customer history</label>
+          <div class="combo">
+            <input
+              id="customer-search"
+              type="search"
+              placeholder="Search customer number or name"
+              autocomplete="off"
+              aria-expanded="false"
+              aria-controls="customer-options"
+            />
+            <button id="clear-customer" class="icon-button" type="button" title="Clear customer" aria-label="Clear customer">×</button>
+            <div id="customer-options" class="options" role="listbox"></div>
+          </div>
+          <p id="selected-customer" class="selected">No customer selected. Results use description only.</p>
+
+          <div class="actions">
+            <button type="submit">Find Matches</button>
+            <button id="sample-query" class="secondary" type="button">Use Sample</button>
+          </div>
+        </form>
+      </section>
+
+      <section class="results-pane">
+        <div class="results-head">
+          <div>
+            <p class="eyebrow">Top 3</p>
+            <h2>Matches</h2>
+          </div>
+          <span id="history-pill">No history boost</span>
+        </div>
+
+        <div id="status" class="status">Enter a description to search the catalog.</div>
+        <div id="results" class="results"></div>
+      </section>
+    </main>
+    <script src="/static/app.js"></script>
+  </body>
+</html>
