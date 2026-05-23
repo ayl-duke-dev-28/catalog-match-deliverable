@@ -366,10 +366,12 @@ class CatalogMatcher:
                 }
             )
 
+        low_confidence = all(match["confidence"] <= 5.0 for match in matches)
         return {
             "query": query,
             "customer": self._customer_payload(profile),
             "history_weight": round(history_weight, 2),
+            "warning": "Very low confidence; showing nearest catalog rows anyway." if low_confidence else "",
             "matches": matches,
         }
 
@@ -478,4 +480,3 @@ class CatalogMatcher:
             "customer_name": profile.customer_name,
             "order_count": profile.order_count,
         }
-

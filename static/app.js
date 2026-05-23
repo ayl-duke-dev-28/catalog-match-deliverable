@@ -101,6 +101,11 @@ function renderMatches(payload) {
     </article>
   `).join("");
 
+  if (payload.warning) {
+    setStatus(payload.warning, "warn");
+    return;
+  }
+
   setStatus(
     payload.customer
       ? `Personalized for ${payload.customer.customer_id}.`
